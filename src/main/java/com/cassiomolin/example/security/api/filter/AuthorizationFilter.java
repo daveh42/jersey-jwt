@@ -25,9 +25,11 @@ import java.lang.reflect.Method;
  *
  * Both AuthenticationFilter and AuthorizationFilter are global and will be executed for each resource method:
  *
- * The AuthenticationFilter will attempt to authenticate the user for each request. This filter will just tell who the user is (can be an anonymous user, for example). Then such filter will set a SecurityContext for the request (see the code).
+ * The AuthenticationFilter will attempt to authenticate the user for each request. This filter will just tell who the user
+ * is (can be an anonymous user, for example). Then such filter will set a SecurityContext for the request (see the code).
  *
- * Then the AuthorizationFilter will authorize the request. As part of the authorization process, anonymous users cannot execute non-annotated methods (see the code).
+ * Then the AuthorizationFilter will authorize the request. As part of the authorization process, anonymous users cannot 
+ * execute non-annotated methods (see the code).
  *
  */
 @Provider
