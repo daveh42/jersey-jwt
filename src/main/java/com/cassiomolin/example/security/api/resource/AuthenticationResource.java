@@ -66,6 +66,16 @@ public class AuthenticationResource {
     @Path("refresh")
     @Produces(MediaType.APPLICATION_JSON)
     public Response refresh() {
+        
+        // Fix for error:
+        // javax.servlet.ServletException: java.lang.ClassCastException: 
+        // org.glassfish.jersey.server.internal.process.SecurityContextInjectee cannot be cast to 
+        // com.cassiomolin.example.security.api.TokenBasedSecurityContext
+        // 
+        //public Response refresh(@Context ContainerRequestContext context) {
+        //    AuthenticationTokenDetails tokenDetails =
+        //        ((TokenBasedSecurityContext) context.getSecurityContext()).getAuthenticationTokenDetails();
+        //    ...
 
         AuthenticationTokenDetails tokenDetails =
                 ((TokenBasedSecurityContext) securityContext).getAuthenticationTokenDetails();
